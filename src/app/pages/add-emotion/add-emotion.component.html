@@ -1,0 +1,114 @@
+<div class="content-form">
+    <mat-card class="full-600">
+        <mat-card-title>
+            <h2 class="text-center">Nueva Emoción</h2>
+        </mat-card-title>
+        <mat-card-content>
+            <mat-form-field class="full" appearance="fill">
+                <mat-label>Ingresa tu nombre</mat-label>
+                <input matInput [(ngModel)]='nombre' required>
+            </mat-form-field>
+
+            <table class="full">
+                <tr class="title text-center">
+                    <td>Variable de estado</td>
+                    <td>Poco</td>
+                    <td>Medio</td>
+                    <td>Mucha</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="content-form">
+                            
+                            <img src="./../../../assets/img/smiley.png" width="100px" />
+                        </div>
+                    </td>
+                    <td>
+                        <div class="content-form">
+                            <button mat-fab color="primary" [color]="(esPocoFeliz) ? 'warn' : 'accent'" (click)="changeStatusHappy(33)">
+                                <mat-icon>add</mat-icon>
+                            </button>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="content-form">
+                            <button mat-fab [color]="(esMedioFeliz) ? 'warn' : 'accent'" (click)="changeStatusHappy(67)">
+                                <mat-icon>add</mat-icon>
+                            </button>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="content-form">
+                            <button mat-fab [color]="(esMuyFeliz) ? 'warn' : 'accent'" (click)="changeStatusHappy(100)">
+                                <mat-icon>add</mat-icon>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="content-form">
+                            <img src="./../../../assets/img/cara-enojada.png" width="85px" />
+                        </div>
+                    </td>
+                    <td>
+                        <div class="content-form">
+                            <button mat-fab color="primary" [color]="(esPocoMolesto) ? 'warn' : 'accent'" (click)="changeStatusAngry(33)">
+                                <mat-icon>add</mat-icon>
+                            </button>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="content-form">
+                            <button mat-fab [color]="(esMedioMolesto) ? 'warn' : 'accent'" (click)="changeStatusAngry(67)">
+                                <mat-icon>add</mat-icon>
+                            </button>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="content-form">
+                            <button mat-fab [color]="(esMuyMolesto) ? 'warn' : 'accent'" (click)="changeStatusAngry(100)">
+                                <mat-icon>add</mat-icon>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="content-form">
+                            <img src="./../../../assets/img/aliviado.png" width="80px" />
+                        </div>
+                    </td>
+                    <td>
+                        <div class="content-form">
+                            <button mat-fab color="primary" [color]="(esPocoTranquilo) ? 'warn' : 'accent'" (click)="changeStatusNormal(33)">
+                                <mat-icon>add</mat-icon>
+                            </button>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="content-form">
+                            <button mat-fab [color]="(esMedioTranquilo) ? 'warn' : 'accent'" (click)="changeStatusNormal(67)">
+                                <mat-icon>add</mat-icon>
+                            </button>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="content-form">
+                            <button mat-fab [color]="(esMuyTranquilo) ? 'warn' : 'accent'" (click)="changeStatusNormal(100)">
+                                <mat-icon>add</mat-icon>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <div class="content-form" style="margin-top: 50px;">
+                <button mat-flat-button color="primary" type="submit" (click)="enviarEmocion()">Agregar</button>
+            </div>
+            
+        </mat-card-content>
+        <canvas id="emociones"></canvas>
+    </mat-card>
+
+    
+</div>
