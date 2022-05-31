@@ -24,7 +24,7 @@ export class SidenavComponent implements OnInit {
     {
       name: "Registros",
       route: "/home", 
-      icon: "home"
+      icon: "group"
     },
     {
       name: "Agregar",

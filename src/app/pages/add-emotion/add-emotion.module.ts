@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, CurrencyPipe, DatePipe } from '@angular/common';
 
 import { AddEmotionRoutingModule } from './add-emotion-routing.module';
 import { AddEmotionComponent } from './add-emotion.component';
@@ -9,7 +9,10 @@ import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import {MatSliderModule} from '@angular/material/slider';
+
 import { FormsModule } from '@angular/forms';
+import { MAT_DATE_FORMATS } from '@angular/material/core';
 
 
 @NgModule({
@@ -24,7 +27,12 @@ import { FormsModule } from '@angular/forms';
     MatTableModule,
     MatButtonModule,
     MatIconModule,
-    FormsModule
-  ]
+    FormsModule,
+    MatSliderModule
+  ],
+  providers: [
+    DatePipe,
+    CurrencyPipe,
+  ],
 })
 export class AddEmotionModule { }

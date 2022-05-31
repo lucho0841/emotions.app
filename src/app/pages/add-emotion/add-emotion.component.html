@@ -19,96 +19,63 @@
                 <tr>
                     <td>
                         <div class="content-form">
-                            
-                            <img src="./../../../assets/img/smiley.png" width="100px" />
+
+                            <img src="./../../../assets/img/happy.png" width="80px" />
                         </div>
                     </td>
-                    <td>
-                        <div class="content-form">
-                            <button mat-fab color="primary" [color]="(esPocoFeliz) ? 'warn' : 'accent'" (click)="changeStatusHappy(33)">
-                                <mat-icon>add</mat-icon>
-                            </button>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="content-form">
-                            <button mat-fab [color]="(esMedioFeliz) ? 'warn' : 'accent'" (click)="changeStatusHappy(67)">
-                                <mat-icon>add</mat-icon>
-                            </button>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="content-form">
-                            <button mat-fab [color]="(esMuyFeliz) ? 'warn' : 'accent'" (click)="changeStatusHappy(100)">
-                                <mat-icon>add</mat-icon>
-                            </button>
+                    <td colspan="3">
+                        <div >
+                            <mat-slider class="full" thumbLabel [tickInterval]="getSliderTickInterval()"
+                            [(ngModel)]="valorFeliz" step="1" min="0"
+                                max="99" aria-label="units"></mat-slider>
+                                <p><b>Valor seleccionado:</b> {{valorFeliz}}</p>
                         </div>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <div class="content-form">
-                            <img src="./../../../assets/img/cara-enojada.png" width="85px" />
+                            <img src="./../../../assets/img/angry.png" width="80px" />
                         </div>
                     </td>
-                    <td>
-                        <div class="content-form">
-                            <button mat-fab color="primary" [color]="(esPocoMolesto) ? 'warn' : 'accent'" (click)="changeStatusAngry(33)">
-                                <mat-icon>add</mat-icon>
-                            </button>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="content-form">
-                            <button mat-fab [color]="(esMedioMolesto) ? 'warn' : 'accent'" (click)="changeStatusAngry(67)">
-                                <mat-icon>add</mat-icon>
-                            </button>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="content-form">
-                            <button mat-fab [color]="(esMuyMolesto) ? 'warn' : 'accent'" (click)="changeStatusAngry(100)">
-                                <mat-icon>add</mat-icon>
-                            </button>
+                    <td colspan="3">
+                        <div >
+                            <mat-slider class="full" thumbLabel [tickInterval]="getSliderTickInterval()"
+                            [(ngModel)]="valorMolesto" step="1" min="0"
+                                max="99" aria-label="units"></mat-slider>
+                                <p><b>Valor seleccionado:</b> {{valorMolesto}}</p>
                         </div>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <div class="content-form">
-                            <img src="./../../../assets/img/aliviado.png" width="80px" />
+                            <img src="./../../../assets/img/tired.png" width="80px" />
                         </div>
                     </td>
-                    <td>
-                        <div class="content-form">
-                            <button mat-fab color="primary" [color]="(esPocoTranquilo) ? 'warn' : 'accent'" (click)="changeStatusNormal(33)">
-                                <mat-icon>add</mat-icon>
-                            </button>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="content-form">
-                            <button mat-fab [color]="(esMedioTranquilo) ? 'warn' : 'accent'" (click)="changeStatusNormal(67)">
-                                <mat-icon>add</mat-icon>
-                            </button>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="content-form">
-                            <button mat-fab [color]="(esMuyTranquilo) ? 'warn' : 'accent'" (click)="changeStatusNormal(100)">
-                                <mat-icon>add</mat-icon>
-                            </button>
+                    <td colspan="3">
+                        <div >
+                            <mat-slider class="full" thumbLabel [tickInterval]="getSliderTickInterval()"
+                            [(ngModel)]="valorNormal" step="1" min="0"
+                                max="99" aria-label="units"></mat-slider>
+                                <p><b>Valor seleccionado:</b> {{valorNormal}}</p>
                         </div>
                     </td>
                 </tr>
             </table>
             <div class="content-form" style="margin-top: 50px;">
-                <button mat-flat-button color="primary" type="submit" (click)="enviarEmocion()">Agregar</button>
+                <button mat-flat-button color="primary" type="submit" (click)="enviarEmocion()" [disabled]="!isData">Agregar</button>
             </div>
-            
-        </mat-card-content>
-        <canvas id="emociones"></canvas>
-    </mat-card>
 
-    
+        </mat-card-content>
+        <div style="margin: 20px;">
+            <h2>Alegre</h2>
+            <canvas id="alegre" style="margin-bottom: 20px;"></canvas>
+            <h2>Molesto</h2>
+            <canvas id="molesto" style="margin-bottom: 20px;"></canvas>
+            <h2>Tranquilo</h2>
+            <canvas id="normal" style="margin-bottom: 20px;"></canvas>
+        </div>
+        
+    </mat-card>
 </div>
